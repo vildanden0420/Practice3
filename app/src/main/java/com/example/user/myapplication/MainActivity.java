@@ -1,5 +1,6 @@
 package com.example.user.myapplication;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import static com.example.user.myapplication.R.id.nextAct;
 
 public class MainActivity extends AppCompatActivity {
     ImageView iv;
@@ -39,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.nextAct){
+            Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+            startActivity(intent);
+        }
 
         if(item.getItemId() == R.id.menuBlue){
             linearLayout.setBackgroundColor(Color.BLUE);
